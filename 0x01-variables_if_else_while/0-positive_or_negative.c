@@ -2,12 +2,14 @@
 #include <time.h>
 #include <stdio.h>
 
-/**
- * main - This program will assign a random number to the variable n
+/*
+ * main - A program that assigns a rando number to the variable n
  * each time it is executed.
  *
  * Return: Always 0 (success)
  */
+
+/* betty style doc for function main goes there */
 int main(void)
 {
 	int n;
@@ -30,3 +32,4 @@ int main(void)
 
 	return (0);
 }
+
