@@ -6,13 +6,14 @@
  * for the program 101-crackme.
  * Return: Always 0.
  */
-int main()
+int main(void)
 {
-	char pass_data[] = 
+	char pass_data[] =
 		"abcdefghijklmnopqrstuvwxyz"
 		"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 		"0123456789"
 		"~@#$%^&*";
+
 	srand(time(NULL));
 	printf("Password : ");
 	for (int i = 0; i < 10; i++)
