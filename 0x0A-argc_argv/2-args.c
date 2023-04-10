@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - A program that prints its name
+ * main - A program that prints that prints all arguments it receives.
  * @argc: The argument counter.
  * @argv: The array of pointer to the arguments.
  *
