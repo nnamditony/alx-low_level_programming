@@ -13,8 +13,8 @@ char *str_concat(char *s1, char *s2)
 	char *str;
 	unsigned int i, s = 0;
 
-	str = malloc(s * sizeof(char));
-	if (str == 0)
+	str = (char *)malloc(s * sizeof(char));
+	if (str == NULL)
 	{
 		return (NULL);
 	}
