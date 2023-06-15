@@ -31,13 +31,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s1 == NULL || s2 == NULL)
 		return (" ");
 	if (n < strlen(s2))
-	{
 		p = malloc(l1 * sizeof(char));
-	}
 	else
-	{
 		p = malloc(l * sizeof(char));
-	}
 
 	if (p == NULL)
 		return (NULL);
