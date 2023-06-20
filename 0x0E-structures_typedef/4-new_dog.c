@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include "dog.h"
 
+int _strlen(char *str);
+char *_strcpy(char *dest, char *src);
+dog_t *new_dog(char *name, float age, char *owner);
+
 /**
  * strcpy - copies from source to destination.
  * @src: string source.
