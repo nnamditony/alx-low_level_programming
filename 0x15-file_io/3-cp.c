@@ -53,28 +53,39 @@ int main(int argc, char *argv[])
 	buff = creat_buf(argv[2]);
 	src = open(argv[1], O_RDONLY);
 	_read = read(src, buff, 1024);
-	dest = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	while (_read > 0)
 	{
 		if (src == -1 || _read == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			free(buff);
 			exit(98);
 		}
 		_write = write(dest, buff, _read);
 		if (dest == -1 || _write == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			free(buff);
 			exit(99);
 		}
 		_read = read(src, buff, 1024);
 		dest = open(argv[2], O_WRONLY | O_APPEND);
 	}
-	free(buff);
+
+	if (close(src) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", src);
+		exit(100);
+	}
 	close(src);
+	if (close(dest) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", dest);
+		exit(100);
+	}
 	close(dest);
+	free(buff);
 	return (0);
 }
