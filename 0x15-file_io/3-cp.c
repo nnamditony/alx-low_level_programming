@@ -32,12 +32,10 @@ void file_close(int fd)
 		exit(100);
 	}
 }
-
 /**
  * main - Copies content of a file to another file
  * @argc: Argument counter
  * @argv: Argument vector
- *
  * Return: Always 0 success
  */
 int main(int argc, char *argv[])
@@ -54,7 +52,6 @@ int main(int argc, char *argv[])
 	src = open(argv[1], O_RDONLY);
 	_read = read(src, buff, 1024);
 	dest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-
 	while (_read > 0)
 	{
 		if (src == -1 || _read == -1)
@@ -73,7 +70,6 @@ int main(int argc, char *argv[])
 		_read = read(src, buff, 1024);
 		dest = open(argv[2], O_WRONLY | O_APPEND);
 	}
-
 	if (close(src) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", src);
