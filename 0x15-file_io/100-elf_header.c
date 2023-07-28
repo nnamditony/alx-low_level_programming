@@ -209,7 +209,7 @@ void p_type(unsigned int e_type, unsigned char *e_ident)
 			printf("CORE (Core file)\n");
 			break;
 		default:
-			printf("<unknown: %x>\n");
+			printf("<unknown: %x>\n", e_type);
 	}
 }
 /**
